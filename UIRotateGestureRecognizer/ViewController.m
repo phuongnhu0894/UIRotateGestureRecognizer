@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import <QuartzCore/QuartzCore.h>
+
 
 @interface ViewController ()
 
 - (void) handleRotationWithGestureRecognizer : (UIRotationGestureRecognizer *) rotationGestureRecognizer;
-- (void)rotateImageView;
+
 @end
 
 @implementation ViewController
@@ -28,18 +28,25 @@
 }
 
 - (void) handleRotationWithGestureRecognizer:(UIRotationGestureRecognizer *)rotationGestureRecognizer {
-    self.rugbyImageView.transform = CGAffineTransformRotate(self.rugbyImageView.transform, rotationGestureRecognizer.rotation);
-    rotationGestureRecognizer.rotation = 0.0;
-    [self rotateImageView];
+    if (rotationGestureRecognizer.state != UIGestureRecognizerStateRecognized) {
+        NSLog(@"%f", rotationGestureRecognizer.rotation);
+        self.rugbyImageView.transform = CGAffineTransformRotate(self.rugbyImageView.transform, rotationGestureRecognizer.rotation);
+        rotationGestureRecognizer.rotation = 0.0;
+        [self rotateImageView:rotationGestureRecognizer.rotation];
+    }
+    
 }
 
-- (void)rotateImageView
+- (void)rotateImageView: (CGFloat) rotation
 {
+   
     [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        if (rotation<0) {
+            [self.rugbyImageView setTransform:CGAffineTransformRotate(self.rugbyImageView.transform, -M_PI_2)];
+        } else{
         [self.rugbyImageView setTransform:CGAffineTransformRotate(self.rugbyImageView.transform, M_PI_2)];
-    }completion:^(BOOL finished){
-        if (finished) {
         }
+    }completion:^(BOOL finished){
     }];
 }
 

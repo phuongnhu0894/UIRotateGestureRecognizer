@@ -13,7 +13,7 @@
 		3F7FCF4B1C0025970019660F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FCF491C0025970019660F /* Main.storyboard */; };
 		3F7FCF4D1C0025970019660F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FCF4C1C0025970019660F /* Assets.xcassets */; };
 		3F7FCF501C0025970019660F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FCF4E1C0025970019660F /* LaunchScreen.storyboard */; };
-		3F7FCF581C0026960019660F /* rugby.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F7FCF571C0026960019660F /* rugby.png */; settings = {ASSET_TAGS = (); }; };
+		640312B21C01FACE00333D9E /* rugby.png in Resources */ = {isa = PBXBuildFile; fileRef = 640312B11C01FACE00333D9E /* rugby.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		3F7FCF4C1C0025970019660F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F7FCF4F1C0025970019660F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F7FCF511C0025970019660F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F7FCF571C0026960019660F /* rugby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rugby.png; path = ../../../Desktop/rugby.png; sourceTree = "<group>"; };
+		640312B11C01FACE00333D9E /* rugby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rugby.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		3F7FCF3F1C0025970019660F /* UIRotateGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				3F7FCF571C0026960019660F /* rugby.png */,
+				640312B01C01FACE00333D9E /* Images */,
 				3F7FCF431C0025970019660F /* AppDelegate.h */,
 				3F7FCF441C0025970019660F /* AppDelegate.m */,
 				3F7FCF461C0025970019660F /* ViewController.h */,
@@ -80,6 +80,14 @@
 				3F7FCF411C0025970019660F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		640312B01C01FACE00333D9E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				640312B11C01FACE00333D9E /* rugby.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7FCF501C0025970019660F /* LaunchScreen.storyboard in Resources */,
-				3F7FCF581C0026960019660F /* rugby.png in Resources */,
+				640312B21C01FACE00333D9E /* rugby.png in Resources */,
 				3F7FCF4D1C0025970019660F /* Assets.xcassets in Resources */,
 				3F7FCF4B1C0025970019660F /* Main.storyboard in Resources */,
 			);
@@ -302,6 +310,7 @@
 				3F7FCF561C0025970019660F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
