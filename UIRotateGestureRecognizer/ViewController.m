@@ -28,10 +28,10 @@
 }
 
 - (void) handleRotationWithGestureRecognizer:(UIRotationGestureRecognizer *)rotationGestureRecognizer {
-    if (rotationGestureRecognizer.state != UIGestureRecognizerStateRecognized) {
+    if (rotationGestureRecognizer.state != UIGestureRecognizerStateEnded) {
         NSLog(@"%f", rotationGestureRecognizer.rotation);
         self.rugbyImageView.transform = CGAffineTransformRotate(self.rugbyImageView.transform, rotationGestureRecognizer.rotation);
-        rotationGestureRecognizer.rotation = 0.0;
+//        rotationGestureRecognizer.rotation = 0.0;
         [self rotateImageView:rotationGestureRecognizer.rotation];
     }
     
@@ -40,11 +40,11 @@
 - (void)rotateImageView: (CGFloat) rotation
 {
    
-    [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        if (rotation<0) {
-            [self.rugbyImageView setTransform:CGAffineTransformRotate(self.rugbyImageView.transform, -M_PI_2)];
+    [UIView animateWithDuration:3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        if (rotation > 0) {
+            [self.rugbyImageView setTransform:CGAffineTransformRotate(self.rugbyImageView.transform, M_PI_2)];
         } else{
-        [self.rugbyImageView setTransform:CGAffineTransformRotate(self.rugbyImageView.transform, M_PI_2)];
+        [self.rugbyImageView setTransform:CGAffineTransformRotate(self.rugbyImageView.transform, -M_PI_2)];
         }
     }completion:^(BOOL finished){
     }];
